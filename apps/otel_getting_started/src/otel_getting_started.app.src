@@ -9,6 +9,8 @@
     grpcbox,
     opentelemetry_api,
     opentelemetry,
+    opentelemetry_api_experimental,
+    opentelemetry_experimental,
     opentelemetry_exporter
    ]},
   {env,[]},

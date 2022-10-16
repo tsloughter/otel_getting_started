@@ -2,6 +2,7 @@
 
 -export([hello/0]).
 
+-include_lib("kernel/include/logger.hrl").
 -include_lib("opentelemetry_api/include/otel_tracer.hrl").
 
 hello() ->
@@ -11,6 +12,8 @@ hello() ->
 nice_operation(_SpanCtx) ->
     ?add_event(<<"Nice operation!">>, [{<<"bogons">>, 100}]),
     ?set_attributes([{another_key, <<"yes">>}]),
+
+    ?LOG_ERROR("GOT AN ERROR!"),
 
     %% start an active span and run an anonymous function
     ?with_span(<<"Sub operation...">>, #{},
