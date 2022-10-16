@@ -1,6 +1,12 @@
 otel_getting_started
 =====
 
+# Local Collector over GRPC
+
+```shell
+$ OTEL_EXPORTER_OTLP_ENDPOINT=http://localhost:4317 OTEL_EXPORTER_OTLP_TRACES_PROTOCOL=grpc rebar3 shell
+```
+
 # With Honeycomb
 
 ``` shell
